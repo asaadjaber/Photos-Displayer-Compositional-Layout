@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="leg-1M-Wbf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -9,54 +9,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Displayer View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="RCy-WU-pIA">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PhotosDisplayerViewController" customModule="PhotosDisplayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="leg-1M-Wbf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="888-Y8-0aq">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oeD-Ne-rSf" kind="relationship" relationship="rootViewController" id="5At-hQ-H4H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2v-ag-qXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="10"/>
+        </scene>
+        <!--Photos Displayer View Controller-->
+        <scene sceneID="713-m6-CQ7">
+            <objects>
+                <viewController id="oeD-Ne-rSf" customClass="PhotosDisplayerViewController" customModule="PhotosDisplayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tnn-JQ-dpt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-i2-TWO">
-                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-SR-Ue8">
+                                <rect key="frame" x="0.0" y="162" width="393" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J1T-9X-7em">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ITt-qM-f8d">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="YfU-41-pTV">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="oTT-Px-oss" customClass="PhotoCell" customModule="PhotosDisplayer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AXG-at-phj">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U7h-9o-9tR">
                                             <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FV7-rq-blD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FV7-rq-blD" firstAttribute="leading" secondItem="U7h-9o-9tR" secondAttribute="leading" id="047-cK-vmq"/>
+                                                <constraint firstItem="FV7-rq-blD" firstAttribute="top" secondItem="U7h-9o-9tR" secondAttribute="top" id="5Z9-e2-Qzh"/>
+                                                <constraint firstAttribute="bottom" secondItem="FV7-rq-blD" secondAttribute="bottom" id="5zt-wk-bsn"/>
+                                                <constraint firstAttribute="trailing" secondItem="FV7-rq-blD" secondAttribute="trailing" id="6tB-sR-bDy"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="FV7-rq-blD" id="9bH-FF-a5p"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="82Q-G3-fyi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HPA-i2-TWO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gf0-Wb-fMj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HPA-i2-TWO" secondAttribute="bottom" id="i57-Xa-kel"/>
-                            <constraint firstItem="HPA-i2-TWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rG0-ci-dwx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HPA-i2-TWO" secondAttribute="trailing" id="u4j-en-7aI"/>
+                            <constraint firstItem="82Q-G3-fyi" firstAttribute="trailing" secondItem="XWM-SR-Ue8" secondAttribute="trailing" id="1wc-OW-fkL"/>
+                            <constraint firstItem="XWM-SR-Ue8" firstAttribute="leading" secondItem="82Q-G3-fyi" secondAttribute="leading" id="Sbd-Sn-oMe"/>
+                            <constraint firstItem="XWM-SR-Ue8" firstAttribute="top" secondItem="82Q-G3-fyi" secondAttribute="top" id="Z8B-ax-hOF"/>
+                            <constraint firstItem="82Q-G3-fyi" firstAttribute="bottom" secondItem="XWM-SR-Ue8" secondAttribute="bottom" id="nUo-TL-Cz6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="H3C-NA-GRJ">
+                        <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="VZW-d1-nlM">
+                            <connections>
+                                <action selector="presentImagePicker:" destination="oeD-Ne-rSf" id="6tn-j5-Vti"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="photosCollectionView" destination="HPA-i2-TWO" id="HDQ-oF-Tll"/>
+                        <outlet property="photosCollectionView" destination="XWM-SR-Ue8" id="VOR-SB-fHJ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ut-ol-ttK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-2"/>
+            <point key="canvasLocation" x="1602" y="10"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
